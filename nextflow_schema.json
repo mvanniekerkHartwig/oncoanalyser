@@ -128,6 +128,12 @@
                     "description": "Semicolon-separated list of Isofox functions to run",
                     "default": "TRANSCRIPT_COUNTS;ALT_SPLICE_JUNCTIONS;FUSIONS;RETAINED_INTRONS",
                     "fa_icon": "fas fa-cog"
+                },
+                "primary_tumor_doids": {
+                    "type": "string",
+                    "description": "Comma-separated list of primary tumor DOIDs.",
+                    "default": "162",
+                    "fa_icon": "fas fa-cog"
                 }
             }
         },

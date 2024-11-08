@@ -23,6 +23,7 @@ class Constants {
 
     static String HLA_SLICE_BED_GRCH38_ALT_PATH = 'https://pub-cf6ba01919994c3cbd354659947f74d8.r2.dev/other/hla_slice/grch38_alt.plus_homologous.bed'
 
+    static String GENERIC_TUMOR_DOID = '162'
 
     static Integer DEFAULT_ISOFOX_READ_LENGTH_WTS = 151
     static Integer DEFAULT_ISOFOX_READ_LENGTH_TARGETED = 93

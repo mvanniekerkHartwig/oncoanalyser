@@ -19,6 +19,7 @@ process ORANGE {
     path isofox_alt_sj
     path isofox_gene_distribution
     val pipeline_version
+    val primary_tumor_doids
 
     output:
     tuple val(meta), path('output/*.orange.pdf') , emit: pdf
@@ -113,7 +114,7 @@ process ORANGE {
             -pipeline_version_file pipeline_version.txt \\
             \\
             -tumor_sample_id ${meta.tumor_id} \\
-            -primary_tumor_doids 162 \\
+            -primary_tumor_doids ${primary_tumor_doids} \\
             -tumor_sample_wgs_metrics_file ${bam_metrics_somatic} \\
             -tumor_sample_flagstat_file ${flagstat_somatic} \\
             -sage_dir ${sage_somatic_dir} \\
