@@ -212,6 +212,9 @@ workflow ORANGE_REPORTING {
             isofox_gene_distribution: isofox_gene_distribution
         }
 
+    // Set primary tumor DOIDs (default to '162' for generic cancer)
+    primary_tumor_doids = params.primary_tumor_doids
+
     // Run process
     ORANGE(
         ch_orange_inputs.sample_data,
@@ -226,6 +229,7 @@ workflow ORANGE_REPORTING {
         ch_orange_inputs.isofox_alt_sj,
         ch_orange_inputs.isofox_gene_distribution,
         "6.0 [oncoanalyser]",
+        primary_tumor_doids,
     )
 
     ch_versions = ch_versions.mix(ORANGE.out.versions)

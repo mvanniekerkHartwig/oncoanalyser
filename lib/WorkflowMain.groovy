@@ -104,12 +104,17 @@ class WorkflowMain {
             }
         }
 
+        if (!params.containsKey('primary_tumor_doids') && stages.orange) {
+            params.primary_tumor_doids = Constants.GENERIC_TUMOR_DOID
+        }
+
         // Final point to set any default to avoid access to undefined parameters during nf-validation
         if (!params.containsKey('panel')) params.panel = null
         if (!params.containsKey('ref_data_genome_alt')) params.ref_data_genome_alt = null
         if (!params.containsKey('ref_data_genome_gtf')) params.ref_data_genome_gtf = null
         if (!params.containsKey('ref_data_hla_slice_bed')) params.ref_data_hla_slice_bed = null
         if (!params.containsKey('ref_data_panel_data_path')) params.ref_data_panel_data_path = null
+        if (!params.containsKey('primary_tumor_doids')) { params.primary_tumor_doids = null }
         if (!params.containsKey('ref_data_virusbreakenddb_path')) params.ref_data_virusbreakenddb_path = null
 
         // Additionally set selected parameters with false-ish truthy values to avoid passing null values as inputs
